@@ -12,7 +12,17 @@ dependencies {
     api project(":manager")
     api project(":model")
     api project(":agent")
-    testImplementation "io.openremote:openremote-test:$openremoteVersion"
+    implementation "org.apache.groovy:groovy-all:$groovyVersion"
+    implementation "org.apache.groovy:groovy-test:$groovyVersion"
+    api platform("org.spockframework:spock-bom:$spockVersion")
+    api 'org.spockframework:spock-core'
+
+    // optional dependencies for using Spock
+    testRuntimeOnly "net.bytebuddy:byte-buddy:$byteBuddyVersion" // allows mocking of classes (in addition to interfaces)
+    testRuntimeOnly "org.objenesis:objenesis:$objenesisVersion" // allows mocking of classes without default constructor (together with ByteBuddy or CGLIB)
+
+
+
 }
 
 tasks.withType(Test) {

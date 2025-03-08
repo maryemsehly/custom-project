@@ -4,7 +4,6 @@
 #
 # Please see profile/deploy.yml for configuration details for each service.
 #
-version: '2.4'
 
 volumes:
   manager-data:
@@ -13,7 +12,7 @@ services:
 
   keycloak:
     extends:
-      file: ../openremote/profile/deploy.yml
+      file: ../profile/deploy.yml
       service: keycloak
     volumes:
       # Map custom themes
@@ -33,7 +32,7 @@ services:
 
   postgresql:
     extends:
-      file: ../openremote/profile/deploy.yml
+      file: ../profile/deploy.yml
       service: postgresql
     volumes:
       - manager-data:/storage
@@ -43,7 +42,7 @@ services:
 
   manager:
     extends:
-      file: ../openremote/profile/deploy.yml
+      file: ../profile/deploy.yml
       service: manager
     depends_on:
       postgresql:

@@ -24,8 +24,6 @@ import org.openremote.agent.custom.CustomProtocol
 import org.openremote.manager.agent.AgentService
 import org.openremote.manager.asset.AssetStorageService
 import org.openremote.model.Constants
-import org.openremote.model.asset.agent.ConnectionStatus
-import org.openremote.test.ManagerContainerTrait
 import spock.lang.Specification
 import spock.util.concurrent.PollingConditions
 

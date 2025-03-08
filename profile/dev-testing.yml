@@ -4,13 +4,13 @@
 #
 # Please see profile/deploy.yml for configuration details for each service.
 #
-version: '2.4'
+#version: '2.4'
 
 services:
 
   keycloak:
     extends:
-      file: ../openremote/profile/deploy.yml
+      file: ../profile/deploy.yml
       service: keycloak
     volumes:
       # Map custom themes
@@ -29,10 +29,10 @@ services:
 
   postgresql:
     extends:
-      file: ../openremote/profile/deploy.yml
+      file: ../profile/deploy.yml
       service: postgresql
     volumes:
-      - ../openremote/tmp:/storage
+      - ../tmp:/storage
     # Access directly if needed on localhost
     ports:
       - "5432:5432"
